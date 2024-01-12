@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* custom.css */
+
+.active .desktop__link {
+    @apply bg-red-500 py-2 w-10/12 border-l-red-500 rounded-r-full;
+}
+.active .mobile__link {
+    @apply bg-red-500 w-10/12 text-center py-1 border-t-red-500 rounded-t-3xl;
+}
+.active{
+    @apply py-0
+}
+.form__error{
+    @apply text-xs text-red-500 ps-4
+}
+.form__control{
+    @apply flex flex-col gap-2 w-full 
+}
