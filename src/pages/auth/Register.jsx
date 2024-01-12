@@ -29,8 +29,8 @@ export const Register = () => {
           formData
         );
         // store user data in localStorage
-        setUser(response.data.data.user); 
-        setToken(response.data.data.token); 
+        setUser(response.data.data.user);
+        setToken(response.data.data.token);
         notify({ type: "success", message: response.data.message });
         navigate("/profile-picker", { replace: true }); // goto profile picker
       } catch (err) {
@@ -106,7 +106,7 @@ export const Register = () => {
               Password
             </label>
             <input
-              type="text"
+              type="password"
               value={formData.password}
               onChange={(e) =>
                 setFormData({ ...formData, password: e.target.value })

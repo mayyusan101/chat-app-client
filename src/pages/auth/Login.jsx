@@ -95,7 +95,7 @@ export const Login = () => {
               Password
             </label>
             <input
-              type="text"
+              type="password"
               value={formData.password}
               onChange={(e) =>
                 setFormData({ ...formData, password: e.target.value })
