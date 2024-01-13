@@ -43,7 +43,10 @@ export const Register = () => {
         navigate("/profile-picker", { replace: true }); // goto profile picker
       } catch (err) {
         console.log(err);
-        notify({ type: "error", message: err.response.data.message });
+        notify({
+          type: "error",
+          message: err.response?.data?.message || "something is wrong!",
+        });
       }
     }
   };
