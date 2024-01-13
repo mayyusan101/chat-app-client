@@ -30,6 +30,10 @@ export const Login = () => {
     const { validate, error } = validation(formData);
     if (!validate) {
       setError(error);
+      setFormData({
+        email: "",
+        password: "",
+      });
     } else {
       try {
         const response = await axios.post(

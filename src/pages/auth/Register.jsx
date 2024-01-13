@@ -27,6 +27,9 @@ export const Register = () => {
     const { validate, error } = validation(formData);
     if (!validate) {
       setError(error);
+      setName("");
+      setEmail("");
+      setPassword("");
     } else {
       try {
         const response = await axios.post(
