@@ -21,7 +21,6 @@ export const ActiveChat = ({ chatUser }) => {
     ? `/images/users/${chatUser.profile}`
     : defaultUserProfile;
 
-  console.log("chat user in acive chat", chatUser);
   return (
     <div
       onClick={startConveration}
