@@ -2,7 +2,6 @@ import { useDispatch } from "react-redux";
 import { fetchChatConversationFromDB } from "../../api/api";
 import { setConversation } from "../../store/features/conversationSlice";
 import { setMessages } from "../../store/features/messageSlice";
-import { LatestMessage } from "./LatestMessage";
 import { defaultUserProfile } from "../../utils/import";
 
 export const ActiveChat = ({ chatUser }) => {
@@ -22,6 +21,7 @@ export const ActiveChat = ({ chatUser }) => {
     ? `/images/users/${chatUser.profile}`
     : defaultUserProfile;
 
+  console.log("chat user in acive chat", chatUser);
   return (
     <div
       onClick={startConveration}
@@ -38,15 +38,7 @@ export const ActiveChat = ({ chatUser }) => {
           <div className="absolute top-0 right-0 w-3 h-3 bg-green-400 rounded-full"></div>
         </div>
         <div className=" flex-1 pb-3 flex flex-col border-b border-slate-200">
-          <h2 className="text-base font-semibold">{chatUser.name}</h2>
-          {chatUser.lastMessage ? (
-            <LatestMessage
-              chatUserName={chatUser.name}
-              message={chatUser.lastMessage}
-            />
-          ) : (
-            <p>Say hii to {chatUser.name}</p>
-          )}
+          <h2 className="text-xl font-semibold">{chatUser.name}</h2>
         </div>
       </div>
     </div>

@@ -9,16 +9,21 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const Register = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const [error, setError] = useState([]);
 
   const handleFormHandler = async (e) => {
     e.preventDefault();
     // validation
+    const formData = {
+      name,
+      email,
+      password,
+    };
     const { validate, error } = validation(formData);
     if (!validate) {
       setError(error);
@@ -34,7 +39,7 @@ export const Register = () => {
         notify({ type: "success", message: response.data.message });
         navigate("/profile-picker", { replace: true }); // goto profile picker
       } catch (err) {
-        console.log(err.response.data.message);
+        console.log(err);
         notify({ type: "error", message: err.response.data.message });
       }
     }
@@ -69,10 +74,8 @@ export const Register = () => {
             </label>
             <input
               type="text"
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="py-2 px-4 text-base w-full rounded-full bg-transparent border-2 border-slate-300 text-white outline-none"
               id="name"
               placeholder="Enter name.."
@@ -88,10 +91,8 @@ export const Register = () => {
             </label>
             <input
               type="text"
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="py-2 px-4 text-base w-full rounded-full bg-transparent border-2 border-slate-300 text-white outline-none"
               id="email"
               placeholder="Enter email.."
@@ -107,10 +108,9 @@ export const Register = () => {
             </label>
             <input
               type="password"
-              value={formData.password}
-              onChange={(e) =>
-                setFormData({ ...formData, password: e.target.value })
-              }
+              autoComplete=""
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="py-2 px-4 text-base w-full rounded-full bg-transparent border-2 border-slate-300 text-white outline-none"
               id="password"
               placeholder="Enter password.."

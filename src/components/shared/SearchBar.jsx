@@ -12,7 +12,7 @@ export const SearchBar = ({ users, onSearchUsers, onClearSearch }) => {
 
   const handleLogout = async () => {
     removeToken(); // clear localStorage
-    removeUser(); 
+    removeUser();
     await logout(currentUser._id);
     navigate("/login"); // redirect to login page
   };
@@ -25,7 +25,7 @@ export const SearchBar = ({ users, onSearchUsers, onClearSearch }) => {
   // search users
   const searchUsers = () => {
     const searchedUsers = users.filter((user) =>
-      user.name.includes(searchText)
+      user.name.toLowerCase().includes(searchText.toLocaleLowerCase())
     );
     onSearchUsers(searchedUsers);
   };

@@ -14,7 +14,7 @@ export const LatestMessage = ({ chatUserName, message }) => {
       displayText =
         message.sender === currentUser._id
           ? `You: ${message.text}`
-          : `${chatUserName}: ${message.text}`;
+          : `${message.text}`;
     }
     setText(displayText);
   }, [message, chatUserName, currentUser._id]);

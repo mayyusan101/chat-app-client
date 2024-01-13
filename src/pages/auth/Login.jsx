@@ -96,6 +96,7 @@ export const Login = () => {
             </label>
             <input
               type="password"
+              autoComplete=""
               value={formData.password}
               onChange={(e) =>
                 setFormData({ ...formData, password: e.target.value })

@@ -30,7 +30,7 @@ api.interceptors.response.use(
   (error) => {
     // Handle 401 errors
     console.log("error", error);
-    if (error.response.status === 401) {
+    if (error?.response?.status === 401) {
       // Redirect to login or refresh token
       console.log("Unauthorized: token.");
       removeUser();

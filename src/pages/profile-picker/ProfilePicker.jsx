@@ -29,10 +29,11 @@ export const ProfilePicker = () => {
       await setUserAratarToDB(image);
       currentUser.profile = image;
       setUser(currentUser); // set profile
-      notify({ type: "error", message: err.response.data.message });
+
       navigate("/", { replace: true }); // goto home page
     } catch (err) {
       console.log(err);
+      notify({ type: "error", message: err.response.data.message });
     }
   };
 
