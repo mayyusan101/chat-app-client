@@ -6,6 +6,7 @@ import { setToken, setUser } from "../../utils/localStorage";
 import { validation } from "./validation/validate";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { API_BASE_URL } from "../../services/apiService";
 
 export const Login = () => {
   const location = useLocation();
@@ -37,7 +38,7 @@ export const Login = () => {
     } else {
       try {
         const response = await axios.post(
-          "http://localhost:3000/api/auth/login",
+          `${API_BASE_URL}/auth/login`,
           formData
         );
         if (response.status === 200) {

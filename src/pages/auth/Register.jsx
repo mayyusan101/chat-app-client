@@ -6,6 +6,7 @@ import { setToken, setUser } from "../../utils/localStorage";
 import { validation } from "./validation/validate";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { API_BASE_URL } from "../../services/apiService";
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export const Register = () => {
     } else {
       try {
         const response = await axios.post(
-          "http://localhost:3000/api/auth/register",
+          `${API_BASE_URL}/auth/register`,
           formData
         );
         // store user data in localStorage
