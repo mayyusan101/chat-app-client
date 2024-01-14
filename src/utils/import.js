@@ -27,38 +27,39 @@ import { LeaveIcon } from "../components/ui/icons/LeaveIcon";
 import { SentIcon } from "../components/ui/icons/SentIcon";
 import { CreateRoomIcon } from "../components/ui/icons/CreateRoomIcon";
 import { CloseIcon } from "../components/ui/icons/CloseIcon";
+import { usePublicRote } from "../hooks/usePublicRote";
 
-
-export{
-    ErrorPage,
-    Login,
-    Register,
-    ProfilePicker,
-    ChatUsers,
-    ChatRooms,
-    ChatActiveUsers,
-    Conversation,
-    DesktopSidebar,
-    MobileFooter,
-    Chat,
-    ConversationHeader,
-    ChatInput,
-    Message,
-    SearchBar,
-    PersonChat,
-    RoomChat,
-    CreateRoom,
-    MyProfile,
-    LatestMessage,
-    ActiveChat,
-    ChatIcon,
-    UsersGroupIcon,
-    TwoUsersIcon,
-    TrashIcon,
-    LeaveIcon,
-    SentIcon,
-    CreateRoomIcon,
-    CloseIcon
+export {
+  ErrorPage,
+  Login,
+  Register,
+  ProfilePicker,
+  ChatUsers,
+  ChatRooms,
+  ChatActiveUsers,
+  Conversation,
+  DesktopSidebar,
+  MobileFooter,
+  Chat,
+  ConversationHeader,
+  ChatInput,
+  Message,
+  SearchBar,
+  PersonChat,
+  RoomChat,
+  CreateRoom,
+  MyProfile,
+  LatestMessage,
+  ActiveChat,
+  ChatIcon,
+  UsersGroupIcon,
+  TwoUsersIcon,
+  TrashIcon,
+  LeaveIcon,
+  SentIcon,
+  CreateRoomIcon,
+  CloseIcon,
+  usePublicRote,
 };
 
-export const defaultUserProfile = '/images/default-user.png'; // absolute path
+export const defaultUserProfile = "/images/default-user.png"; // absolute path

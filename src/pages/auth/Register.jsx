@@ -6,7 +6,6 @@ import { setToken, setUser } from "../../utils/localStorage";
 import { validation } from "./validation/validate";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { API_BASE_URL } from "../../services/apiService";
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -33,6 +32,7 @@ export const Register = () => {
       setPassword("");
     } else {
       try {
+        const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
         const response = await axios.post(
           `${API_BASE_URL}/auth/register`,
           formData
