@@ -15,37 +15,42 @@ import { PublicRoute } from "./PublicRoute.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <AuthorizeRoute element={<App element={<ChatUsers />} />} />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "users",
+    element: <AuthorizeRoute element={<App element={<ChatUsers />} />} />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "rooms",
+    element: <AuthorizeRoute element={<App element={<ChatRooms />} />} />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "active",
     element: <AuthorizeRoute element={<App element={<ChatActiveUsers />} />} />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/users",
-    element: <App element={<ChatUsers />} />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/rooms",
-    element: <App element={<ChatRooms />} />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/active",
-    element: <App element={<ChatActiveUsers />} />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/login",
+    path: "login",
     element: <PublicRoute element={<Login />} />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/register",
+    path: "register",
     element: <PublicRoute element={<Register />} />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/profile-picker",
+    path: "profile-picker",
     element: <AuthorizeRoute element={<ProfilePicker />} />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "*",
+    element: <AuthorizeRoute element={<App element={<ChatUsers />} />} />,
     errorElement: <ErrorPage />,
   },
 ]);
